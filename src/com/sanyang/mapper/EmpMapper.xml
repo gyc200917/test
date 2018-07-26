@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sanyang.mapper.EmpMapper">
+
+<select id="getAllEmp" resultType="employee">
+select * from employee
+</select>
+
+<insert id="addWork" parameterType="workhistory">
+insert into workhistory values(null,#{changeDate},#{result},#{deptName},#{jobType},#{eno})
+</insert>
+
+<select id="getAllWork" parameterType="int" resultType="workhistory">
+select * from workhistory where eno = #{value} ORDER BY changeDate
+</select>
+
+</mapper>
